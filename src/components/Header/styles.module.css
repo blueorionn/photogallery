@@ -1,0 +1,11 @@
+._router-link-active {
+  @apply text-emerald-400;
+}
+
+._showSidebar {
+  transform: translateX(0);
+}
+
+._hideSidebar {
+  transform: translateX(-100%);
+}
