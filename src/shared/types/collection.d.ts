@@ -1,4 +1,4 @@
-type PhotoCollctionMediaSrc = {
+export type PhotoCollctionMediaSrc = {
   original: string;
   large2x: string;
   large: string;
@@ -9,7 +9,7 @@ type PhotoCollctionMediaSrc = {
   tiny: string;
 };
 
-type PhotoCollectionMedia = {
+export type PhotoCollectionMedia = {
   type: "Photo" | "Video";
   id: number;
   width: number;
@@ -27,7 +27,7 @@ type PhotoCollectionMedia = {
 export type PhotoCollectionType = {
   page: number;
   per_page: number;
-  media: Array<PhotoCollctionMedia>;
+  media: Array<PhotoCollectionMedia>;
   total_results: number;
   next_page: string;
   id: string;
