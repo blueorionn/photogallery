@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Legal() {
+export default function Terms() {
   return (
     <>
       <main className="h-[100vh] overflow-y-auto w-full bg-gray-800">
