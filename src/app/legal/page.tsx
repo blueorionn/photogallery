@@ -12,8 +12,10 @@ export const metadata: Metadata = {
     images: "https://photogallery.functionbasket.com/icons/site-icon-full.png",
   },
   twitter: {
-    images: "https://photogallery.functionbasket.com/icons/site-icon-full.png",
     card: "summary",
+    images: "https://photogallery.functionbasket.com/icons/site-icon-full.png",
+    description:
+      "This page is an terms page for website discussing about website terms and condition.",
   },
 };
 
