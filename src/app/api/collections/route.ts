@@ -2,8 +2,9 @@ import { type NextRequest } from "next/server";
 import { photoCollections } from "@/data/collections";
 import { PhotoCollectionType } from "@/shared/types/collection";
 
-// cache for 72 hours
-export const revalidate = 60 * 60 * 24 * 3;
+// cache result
+export const dynamic = "force-static";
+const revalidate = 604800; // 7 days
 
 export async function GET(request: NextRequest) {
   // requesting page number
@@ -55,6 +56,7 @@ export async function GET(request: NextRequest) {
       {
         method: "GET",
         headers: { Authorization: `${process.env.PEXELS_APIKEY}` },
+        next: { revalidate: revalidate },
       }
     );
     const result: PhotoCollectionType = await data.json();
