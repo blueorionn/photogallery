@@ -30,6 +30,7 @@ A modern and visually appealing photo gallery application built using **Next.js*
    ```
 
 3. Start the development server:
+
    ```bash
    npm run dev
    # or
