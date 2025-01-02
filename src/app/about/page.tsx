@@ -1,5 +1,21 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header/Header";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About | Photogallery",
+  openGraph: {
+    title: "About | Photogallery",
+    description:
+      "This page is an about page for website discussing about website terms and legality.",
+    images: "https://photogallery.functionbasket.com/icons/site-icon-full.png",
+  },
+  description:
+    "This page is an about page for website discussing about website terms and legality.",
+  twitter: {
+    card: "summary"
+  }
+};
 
 export default function About() {
   return (
