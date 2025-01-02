@@ -33,6 +33,14 @@ export default function About() {
         </section>
         <section className="w-full max-w-screen-xl mx-auto px-4 py-4 lg:py-8 xl:py-12 text-base xl:text-lg font-normal xl:font-medium text-gray-300">
           <p className="mt-2 xl:mt-4">Welcome to our PhotoGallery!</p>
+          <a
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-2 xl:mt-4 text-blue-400"
+          >
+            Url to my github repository
+          </a>
           <p className="mt-2 xl:mt-4">
             This website is a casual portfolio project created to explore and
             display the beauty of photography. All the photos and videos
