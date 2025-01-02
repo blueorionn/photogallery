@@ -7,13 +7,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About | Photogallery",
     description:
-      "This page is an about page for website discussing about website terms and legality.",
+    "This page is an about page for website discussing about website terms and legality.",
     images: "https://photogallery.functionbasket.com/icons/site-icon-full.png",
   },
   description:
   "This page is an about page for website discussing about website terms and legality.",
   twitter: {
     card: "summary",
+    title: "About | Photogallery",
     images: "https://photogallery.functionbasket.com/icons/site-icon-full.png",
     description:
     "This page is an about page for website discussing about website terms and legality.",
