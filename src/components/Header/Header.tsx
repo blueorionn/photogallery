@@ -7,7 +7,11 @@ import { Mochiy_Pop_P_One } from "next/font/google";
 import styles from "./styles.module.css";
 
 // header font
-const headerFont = Mochiy_Pop_P_One({ weight: "400", style: "normal" });
+const headerFont = Mochiy_Pop_P_One({
+  subsets: ["latin"],
+  weight: "400",
+  style: "normal",
+});
 
 // Header Component
 export default function Header() {
