@@ -15,7 +15,7 @@ export default function ImageCollection({
   return collections.map((collection) => {
     return (
       <Fragment key={collection.id}>
-        <div className="w-full h-72 lg:h-80 xl:h-96 rounded-xl lg:rounded-2xl flex flex-col gap-2 lg:gap-4 xl:gap-6 overflow-hidden">
+        <div className="w-full h-72 lg:h-80 xl:h-96 rounded-lg lg:rounded-xl flex flex-col gap-2 lg:gap-4 xl:gap-6 overflow-hidden">
           <Link
             href={`/collection/${collection.id}`}
             className="relative flex-grow h-full w-full grid grid-rows-6 gap-1 xl:gap-2 overflow-hidden transition-all before:hidden hover:before:block before:content-normal before:h-full before:w-full before:absolute before:inset-0 before:bg-[rgba(0,0,0,.15)]"
@@ -27,7 +27,7 @@ export default function ImageCollection({
                 height={collection.images.media[0].height}
                 width={collection.images.media[0].width}
                 quality={100}
-                className="h-full w-full object-cover rounded-tl-xl rounded-tr-xl lg:rounded-tl-2xl lg:rounded-tr-2xl"
+                className="h-full w-full object-cover rounded-tl-lg rounded-tr-lg lg:rounded-tl-xl lg:rounded-tr-xl"
               />
             </div>
             <div className="row-span-2 flex gap-1 xl:gap-2">
