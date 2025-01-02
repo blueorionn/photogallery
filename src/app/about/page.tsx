@@ -39,7 +39,7 @@ export default function About() {
             rel="noopener noreferrer"
             className="inline-block mt-2 xl:mt-4 text-blue-400"
           >
-            Url to my github repository
+            Photogallery github repository
           </a>
           <p className="mt-2 xl:mt-4">
             This website is a casual portfolio project created to explore and
