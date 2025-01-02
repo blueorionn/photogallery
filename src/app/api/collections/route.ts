@@ -52,7 +52,7 @@ export async function GET(request: NextRequest) {
   for (let i = 0; i < collectionNameAndId.length; i++) {
     const key = collectionNameAndId[i];
     const data = await fetch(
-      `https://api.pexels.com/v1/collections/${key.id}?per_page=4`,
+      `https://api.pexels.com/v1/collections/${key.id}?per_page=10`,
       {
         method: "GET",
         headers: { Authorization: `${process.env.PEXELS_APIKEY}` },

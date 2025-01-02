@@ -1,21 +1,16 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
-export const useFetch = <T>(): [
-  T | T[],
-  boolean,
-  boolean,
-  (url: string) => Promise<void>
-] => {
-  const [data, setData] = useState<T | T[]>([]);
+export const useFetch = <T>() => {
+  const [data, setData] = useState<T>();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
 
-  const fetchResourse = async (url: string) => {
+  const fetchResource = useCallback(async (url: string) => {
     if (url.length) {
       setLoading(true);
       try {
         const response = await fetch(url);
-        const d: T | T[] = await response.json();
+        const d: T = await response.json();
         setData(d);
       } catch {
         setError(true);
@@ -23,7 +18,7 @@ export const useFetch = <T>(): [
         setLoading(false);
       }
     }
-  };
+  }, []);
 
-  return [data, loading, error, fetchResourse];
+  return { data, loading, error, fetchResource };
 };
