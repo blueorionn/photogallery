@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
 import "@/styles/globals.css";
-
-const lato = Lato({
-  weight: "400",
-  style: "normal"
-})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,9 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${lato.className}`}
-      >
+      <body>
         {children}
       </body>
     </html>
