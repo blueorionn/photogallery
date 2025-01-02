@@ -7,18 +7,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About | Photogallery",
     description:
-    "This page is an about page for website discussing about website terms and legality.",
+      "This page is an about page for website discussing about website terms and legality.",
     images: "https://photogallery.functionbasket.com/icons/site-icon-full.png",
   },
   description:
-  "This page is an about page for website discussing about website terms and legality.",
+    "This page is an about page for website discussing about website terms and legality.",
   twitter: {
     card: "summary",
     title: "About | Photogallery",
     images: "https://photogallery.functionbasket.com/icons/site-icon-full.png",
     description:
-    "This page is an about page for website discussing about website terms and legality.",
-  }
+      "This page is an about page for website discussing about website terms and legality.",
+  },
 };
 
 export default function About() {
@@ -37,7 +37,7 @@ export default function About() {
             This website is a casual portfolio project created to explore and
             display the beauty of photography. All the photos and videos
             showcased here are fetched using the
-            <Link href="https://www.pexels.com/api/" target="_blank">
+            <Link href="https://www.pexels.com/api/" target="_blank" className="mx-1">
               <span className="text-blue-500">Pexels API</span>
             </Link>
             , a platform that provides high-quality and free-to-use images and
@@ -64,7 +64,7 @@ export default function About() {
             Additionally, this is not a wallpaper or resource site for
             downloading images. If you find an image you love, we encourage you
             to visit
-            <Link href="https://www.pexels.com/" target="_blank">
+            <Link href="https://www.pexels.com/" target="_blank" className="mx-1">
               <span className="text-blue-500">Pexels</span>
             </Link>
             directly to view more from the original creators and download images
@@ -79,11 +79,11 @@ export default function About() {
           <p className="mt-1 xl:mt-2">
             For further details on acceptable use and our policies, please visit
             our
-            <Link href="/legal">
+            <Link href="/legal" className="mx-1">
               <span className="text-blue-500">Legal</span>
             </Link>
             and
-            <Link href="/terms">
+            <Link href="/terms" className="mx-1">
               <span className="text-blue-500">Terms</span>
             </Link>
             pages.
