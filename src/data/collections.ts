@@ -1,0 +1,18 @@
+export const photoCollections = {
+  Astrophotography: "usy2j0g",
+  "Black Cats": "iarxkpe",
+  Bakeries: "rgu6o56",
+  Burgers: "fonliqi",
+  Castles: "dw6zl6x",
+  "Curious Cats": "vop54l9",
+  Cities: "kudaxhv",
+  "Camping Life": "yzgp3ez",
+  "Dark & Moody": "vh6du5x",
+  "Feeling Creative": "vheswuu",
+  Jellyfish: "wcqf5h2",
+  "Night Time": "xxxmtks",
+  "River Flow": "uyqjgvs",
+  Seascapes: "vp8hhva",
+  "Space Wallpapers": "3onyhbm",
+  "Summer Solstice": "j2zdph3",
+};
