@@ -43,7 +43,6 @@ export default function ImageGallery({ data }: { data: PhotoCollectionType }) {
       // push content
       setCollection([...distributePhotosEvenly(data.media, 3)]);
     }
-
   }, [width, data.media]);
 
   useEffect(() => {
