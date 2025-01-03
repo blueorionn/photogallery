@@ -20,6 +20,7 @@ export default function ImageCollection({
           <div className="w-full h-72 lg:h-80 xl:h-96 rounded-sm lg:rounded flex flex-col gap-2 lg:gap-4 xl:gap-6 overflow-hidden">
             <Link
               href={`/collection/${collection.id}`}
+              target="_blank"
               className="relative flex-grow h-full w-full grid grid-rows-6 gap-1 xl:gap-2 overflow-hidden transition-all before:hidden hover:before:block before:content-normal before:h-full before:w-full before:absolute before:inset-0 before:bg-[rgba(0,0,0,.15)]"
             >
               <div className="row-span-4 rounded-sm lg:rounded">
