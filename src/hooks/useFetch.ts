@@ -11,8 +11,14 @@ export const useFetch = <T>() => {
         setLoading(true);
         try {
           const response = await fetch(url, { signal });
-          const d: T = await response.json();
-          setData(d);
+
+          // if valid response
+          if (response.status == 200) {
+            const d: T = await response.json();
+            setData(d);
+          } else {
+            setError(true);
+          }
         } catch {
           setError(true);
         } finally {
