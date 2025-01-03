@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { photoCollections } from "@/data/collections";
 import Header from "@/components/Header/Header";
+import Collections from "./Collections";
 
 // dynamic metadata
 export async function generateMetadata({
@@ -75,7 +76,9 @@ export default async function Page({
           <section
             className="w-full py-8 lg:py-12 xl:py-16"
             aria-label="collection-grid"
-          ></section>
+          >
+            <Collections collectionId={collectionId} />
+          </section>
         </section>
       </main>
     </>

@@ -1,4 +1,4 @@
-export type PhotoCollctionMediaSrc = {
+export type PhotoCollectionMediaSrc = {
   original: string;
   large2x: string;
   large: string;
@@ -19,7 +19,7 @@ export type PhotoCollectionMedia = {
   photographer_url: string;
   photographer_id: number;
   avg_color: string;
-  src: PhotoCollctionMediaSrc;
+  src: PhotoCollectionMediaSrc;
   liked: boolean;
   alt: string;
 };
