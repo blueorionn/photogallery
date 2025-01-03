@@ -44,8 +44,7 @@ export default function ImageGallery({ data }: { data: PhotoCollectionType }) {
       setCollection([...distributePhotosEvenly(data.media, 3)]);
     }
 
-    console.log(collection?.length);
-  }, [width, data.media, collection?.length]);
+  }, [width, data.media]);
 
   useEffect(() => {
     initializeCollection();
