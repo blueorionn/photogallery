@@ -80,6 +80,7 @@ export default function ImageGallery({ data }: { data: PhotoCollectionType }) {
                     <Link
                       target="_blank"
                       href={image.photographer_url}
+                      rel="noopener noreferrer nofollow"
                       className="flex gap-2 items-center my-2 md:my-4 xl:my-6"
                     >
                       <Image
