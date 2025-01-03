@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Legal Information | Photogallery",
     description:
-    "This page is an terms page for website discussing about website terms and condition.",
+      "This page is an terms page for website discussing about website terms and condition.",
     images: "https://photogallery.functionbasket.com/icons/site-icon-full.png",
   },
   twitter: {
@@ -25,25 +25,24 @@ export default function Legal() {
     <>
       <main className="w-full">
         <Header />
-
-        <section className="w-full max-w-screen-2xl mx-auto px-4 py-4 lg:py-8">
+        <section className="w-full max-w-screen-2xl mx-auto px-4 py-4 lg:py-8 text-gray-300">
           <div className="my-4 md:my-8 lg:my-12 xl:my-16">
-            <h1 className="my-2 lg:my-4 text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-gray-100">
+            <h1 className="my-2 lg:my-4 text-base md:text-lg lg:text-xl xl:text-2xl font-bold">
               Legal Information
             </h1>
-            <p className="px-3 lg:px-0 text-sm md:text-base xl:text-lg font-normal xl:font-medium text-gray-300">
+            <p className="px-3 lg:px-0 text-sm md:text-base xl:text-lg font-normal xl:font-medium">
               This Legal Information page provides details about the use of this
               website, its content, and its compliance with relevant terms and
               conditions. Please read this page carefully before using the
               website.
             </p>
           </div>
-          <div className="my-4 lg:my-6 xl:my-8">
-            <h2 className="my-2 lg:my-4 text-base md:text-lg xl:text-xl font-bold text-gray-200">
+          <div className="my-2 lg:my-4 xl:my-6">
+            <h2 className="my-1 lg:my-2 text-base md:text-lg xl:text-xl font-bold">
               1. Copyright Information
             </h2>
-            <div className="px-3 lg:px-0 text-sm md:text-base xl:text-lg font-normal xl:font-medium text-gray-300">
-              <ul className="w-full mx-4 lg:mx-8 xl:mx-12">
+            <div className="px-3 lg:px-0 text-sm md:text-base xl:text-lg font-normal xl:font-medium">
+              <ul className="w-full mx-3 lg:mx-6 xl:mx-9">
                 <li className="list-disc">
                   All images and videos displayed on this website are sourced
                   from Pexels via their API.
@@ -70,12 +69,12 @@ export default function Legal() {
               </ul>
             </div>
           </div>
-          <div className="my-4 lg:my-6 xl:my-8">
-            <h2 className="my-2 lg:my-4 text-base md:text-lg xl:text-xl font-bold text-gray-200">
+          <div className="my-2 lg:my-4 xl:my-6">
+            <h2 className="my-1 lg:my-2 text-base md:text-lg xl:text-xl font-bold">
               2. Use of the Pexels API
             </h2>
-            <div className="px-3 lg:px-0 text-sm md:text-base xl:text-lg font-normal xl:font-medium text-gray-300">
-              <ul className="w-full mx-4 lg:mx-8 xl:mx-12">
+            <div className="px-3 lg:px-0 text-sm md:text-base xl:text-lg font-normal xl:font-medium">
+              <ul className="w-full mx-3 lg:mx-6 xl:mx-9">
                 <li className="list-disc">
                   This website integrates the Pexels API to dynamically fetch
                   and display photos and videos.
@@ -96,12 +95,12 @@ export default function Legal() {
               </ul>
             </div>
           </div>
-          <div className="my-4 lg:my-6 xl:my-8">
-            <h2 className="my-2 lg:my-4 text-base md:text-lg xl:text-xl font-bold text-gray-200">
+          <div className="my-2 lg:my-4 xl:my-6">
+            <h2 className="my-1 lg:my-2 text-base md:text-lg xl:text-xl font-bold">
               3. Limitation of Liability
             </h2>
-            <div className="px-3 lg:px-0 text-sm md:text-base xl:text-lg font-normal xl:font-medium text-gray-300">
-              <ul className="w-full mx-4 lg:mx-8 xl:mx-12">
+            <div className="px-3 lg:px-0 text-sm md:text-base xl:text-lg font-normal xl:font-medium">
+              <ul className="w-full mx-3 lg:mx-6 xl:mx-9">
                 <li className="list-disc">
                   This website is provided {'"as-is"'} for informational and
                   creative purposes only.
@@ -129,12 +128,12 @@ export default function Legal() {
               </ul>
             </div>
           </div>
-          <div className="my-4 lg:my-6 xl:my-8">
-            <h2 className="my-2 lg:my-4 text-base md:text-lg xl:text-xl font-bold text-gray-200">
+          <div className="my-2 lg:my-4 xl:my-6">
+            <h2 className="my-1 lg:my-2 text-base md:text-lg xl:text-xl font-bold">
               4. Website Purpose
             </h2>
-            <div className="px-3 lg:px-0 text-sm md:text-base xl:text-lg font-normal xl:font-medium text-gray-300">
-              <ul className="w-full mx-4 lg:mx-8 xl:mx-12">
+            <div className="px-3 lg:px-0 text-sm md:text-base xl:text-lg font-normal xl:font-medium">
+              <ul className="w-full mx-3 lg:mx-6 xl:mx-9">
                 <li className="list-disc">
                   This website is a personal portfolio designed to demonstrate
                   the capabilities of web development and API integration using
@@ -152,11 +151,11 @@ export default function Legal() {
               </ul>
             </div>
           </div>
-          <div className="my-4 lg:my-6 xl:my-8">
-            <h2 className="my-2 lg:my-4 text-base md:text-lg xl:text-xl font-bold text-gray-200">
+          <div className="my-2 lg:my-4 xl:my-6">
+            <h2 className="my-1 lg:my-2 text-base md:text-lg xl:text-xl font-bold">
               5. Updates to This Page
             </h2>
-            <p className="px-3 lg:px-0 text-sm md:text-base xl:text-lg font-normal xl:font-medium text-gray-300">
+            <p className="px-3 lg:px-0 text-sm md:text-base xl:text-lg font-normal xl:font-medium">
               We reserve the right to modify this Legal Information page at any
               time without prior notice. By continuing to use the website, you
               agree to the most recent version of this page.
