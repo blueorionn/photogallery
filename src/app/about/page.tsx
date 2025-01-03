@@ -26,13 +26,11 @@ export default function About() {
     <>
       <main className="w-full">
         <Header />
-        <section className="py-4 lg:py-8 xl:py-10">
-          <h1 className="text-center text-lg lg:text-xl xl:text-2xl font-bold text-gray-100">
+        <section className="w-full max-w-screen-2xl mx-auto px-4 py-6 lg:py-12 xl:py-24 text-base xl:text-lg font-normal xl:font-medium text-gray-300">
+          <h1 className="text-lg lg:text-xl xl:text-2xl font-bold">
             About this project
           </h1>
-        </section>
-        <section className="w-full max-w-screen-2xl mx-auto px-4 py-4 lg:py-8 xl:py-12 text-base xl:text-lg font-normal xl:font-medium text-gray-300">
-          <p className="mt-2 xl:mt-4">Welcome to our PhotoGallery!</p>
+          <p className="mt-2 lg:mt-4 xl:mt-8">Welcome to our PhotoGallery!</p>
           <a
             href=""
             target="_blank"
