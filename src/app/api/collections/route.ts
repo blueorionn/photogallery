@@ -3,7 +3,7 @@ import { photoCollections } from "@/data/collections";
 import { PhotoCollectionType } from "@/shared/types/collection";
 
 // cache result
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 const revalidate = 604800; // 7 days
 
 export async function GET(request: NextRequest) {
