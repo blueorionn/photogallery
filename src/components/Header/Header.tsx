@@ -33,7 +33,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full relative z-[10]">
+      <header className="w-full relative z-[10] border-b xl:border-b-2 border-gray-700">
         <nav className="mx-auto w-full max-w-screen-2xl p-4 md:py-6 lg:py-8 flex justify-between items-center">
           <Link href={"/"}>
             <div className="flex justify-center items-center gap-1 md:gap-2 lg:gap-4 cursor-pointer">
