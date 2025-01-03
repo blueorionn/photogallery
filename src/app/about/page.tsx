@@ -26,7 +26,7 @@ export default function About() {
     <>
       <main className="w-full">
         <Header />
-        <section className="w-full max-w-screen-2xl mx-auto px-4 py-6 lg:py-12 xl:py-24 text-base xl:text-lg font-normal xl:font-medium text-gray-300">
+        <section className="w-full max-w-screen-2xl mx-auto px-4 py-6 lg:py-12 xl:py-24 text-base xl:text-lg font-normal xl:font-medium text-gray-400">
           <h1 className="text-lg lg:text-xl xl:text-2xl font-bold">
             About this project
           </h1>
