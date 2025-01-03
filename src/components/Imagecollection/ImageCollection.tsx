@@ -76,7 +76,7 @@ function LoadingCollection() {
         return (
           <div
             key={id}
-            className="w-full h-72 lg:h-80 xl:h-96 rounded-xl lg:rounded-2xl flex flex-col gap-2 lg:gap-4 xl:gap-6 overflow-hidden animate-pulse bg-gray-700"
+            className="w-full h-72 lg:h-80 xl:h-96 rounded lg:rounded-lg flex flex-col gap-2 lg:gap-4 xl:gap-6 overflow-hidden animate-pulse bg-gray-800"
           >
             <span className="sr-only">Loading image</span>
           </div>
