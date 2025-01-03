@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useFetch } from "@/hooks/useFetch";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import ImageGallery from "@/components/ImageGallery/ImageGallery";
 import { type PhotoCollectionType } from "@/shared/types/collection";
 
@@ -9,12 +10,33 @@ export default function Collections({
 }: {
   collectionId: string;
 }) {
+  // photo collections
   const [collections, setCollections] = useState<PhotoCollectionType>();
-  const [page] = useState(1);
+
+  // current api page
+  const [page, setPage] = useState(1);
+
+  // freeze fetching if reached page limit
+  const [frozen, setFrozen] = useState(false);
+
+  // intersection observer
+  const { ref, isIntersecting } = useIntersectionObserver<HTMLDivElement>();
+
+  // increment page if intersection
+  useEffect(() => {
+    if (isIntersecting) {
+      setPage((prev) => prev + 1);
+    }
+  }, [isIntersecting]);
+
+  // fetched data
   const { data, fetchResource } = useFetch<PhotoCollectionType>();
 
   // fetch collection
   useEffect(() => {
+    // don't fetch if page limit reached.
+    if (frozen) return;
+
     const controller = new AbortController();
     const signal = controller.signal;
 
@@ -29,14 +51,16 @@ export default function Collections({
     return () => {
       controller.abort();
     };
-  }, [page, collectionId, fetchResource]);
+  }, [page, collectionId, fetchResource, frozen]);
 
   // update collections
   useEffect(() => {
     if (data) {
       setCollections(data);
+      // if media is null freeze api fetching
+      if (data.media.length < 1) setFrozen(true);
     }
-  }, [data]);
+  }, [data, frozen]);
 
   if (!collections) {
     return <LoadingCollection />;
@@ -45,6 +69,7 @@ export default function Collections({
   return (
     <>
       <ImageGallery data={collections} />
+      <div aria-label="loader" className="my-4 xl:my-6" ref={ref}></div>
     </>
   );
 }

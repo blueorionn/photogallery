@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useWindowSize } from "@/hooks/useWindowSize";
@@ -19,29 +19,39 @@ export default function ImageGallery({ data }: { data: PhotoCollectionType }) {
 
     // computing collection for small width
     if (width >= widthRange.smallWidth && width <= widthRange.mediumWidth) {
-      // clean value
-      setCollection([]);
-
       // push content
       setCollection([...distributePhotosEvenly(data.media, 1)]);
     }
 
     // computing collection for medium width
     if (width >= widthRange.mediumWidth && width <= widthRange.largeWidth) {
-      // clean value
-      setCollection([]);
-
       // push content
       setCollection([...distributePhotosEvenly(data.media, 2)]);
     }
 
     // computing collection for large width
     if (width >= widthRange.largeWidth) {
-      // clean value
-      setCollection([]);
+      /**
+       * push collection to old collection
+       * column array contain collection of photo media it's length range 1 to 3.
+       * collection array is the media collections of each column array.
+       * */
+      if (collection) {
+        setCollection((columnArr) => {
+          if (!columnArr) return columnArr;
+          return columnArr.map((collectionArr, index) => {
+            // redistribute fetched data evenly to each column array.
+            return [
+              ...collectionArr,
+              ...distributePhotosEvenly(data.media, 3)[index],
+            ];
+          });
+        });
+      }
 
-      // push content
-      setCollection([...distributePhotosEvenly(data.media, 3)]);
+      // push new collection
+      if (!collection)
+        setCollection([...distributePhotosEvenly(data.media, 3)]);
     }
   }, [width, data.media]);
 
@@ -54,10 +64,7 @@ export default function ImageGallery({ data }: { data: PhotoCollectionType }) {
       <section className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {collection?.map((item, index) => {
           return (
-            <div
-              className="w-full flex flex-col gap-4 rounded"
-              key={item[index].id}
-            >
+            <div className="w-full flex flex-col gap-4 rounded" key={index}>
               {item.map((image) => {
                 return (
                   <div key={image.id}>
