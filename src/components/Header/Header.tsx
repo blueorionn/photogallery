@@ -1,9 +1,9 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import { useDarkMode } from "@/hooks/useDarkMode";
+import { useState, useContext } from "react";
 import { usePathname } from "next/navigation";
+import { ThemeContext } from "@/context/ThemeContext";
 import { Mochiy_Pop_P_One, Inter } from "next/font/google";
 import styles from "./styles.module.css";
 
@@ -19,7 +19,7 @@ const inter = Inter({ subsets: ["latin"], weight: "500" });
 // Header Component
 export default function Header() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
-  const { toggleTheme } = useDarkMode();
+  const themeManager = useContext(ThemeContext);
   const pathname = usePathname();
 
   const reflectSideBarToogle = (
@@ -78,7 +78,7 @@ export default function Header() {
               </div>
               <button
                 type="button"
-                onClick={toggleTheme}
+                onClick={() => themeManager?.toggleTheme()}
                 className="min-w-12 p-0.5 rounded-full bg-gray-800 border border-gray-500"
               >
                 <span className="sr-only">Theme toogle button</span>
