@@ -25,7 +25,7 @@ export default function Page() {
         <Header />
         <section className="w-full max-w-screen-2xl mx-auto px-6 py-6 lg:py-12 xl:py-16">
           <div className="w-full flex justify-center items-center">
-            <h1 className="text-xl lg:text-2xl xl:text-4xl font-semibold xl:font-bold text-gray-300">
+            <h1 className="text-xl lg:text-2xl xl:text-4xl font-semibold xl:font-bold text-gray-400">
               Discover Collections
             </h1>
           </div>
