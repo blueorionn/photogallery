@@ -15,10 +15,20 @@ export default function Collections({
 
   // fetch collection
   useEffect(() => {
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     const fetchCollection = async () => {
-      await fetchResource(`/api/collection/${collectionId}?page=${page}`);
+      await fetchResource(
+        `/api/collection/${collectionId}?page=${page}`,
+        signal
+      );
     };
     fetchCollection();
+
+    return () => {
+      controller.abort();
+    };
   }, [page, collectionId, fetchResource]);
 
   // update collections
