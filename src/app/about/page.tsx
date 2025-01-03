@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <>
-      <main className="h-[100vh] overflow-y-auto w-full bg-gray-800">
+      <main className="w-full">
         <Header />
         <section className="py-4 lg:py-8 xl:py-10">
           <h1 className="text-center text-lg lg:text-xl xl:text-2xl font-bold text-gray-100">

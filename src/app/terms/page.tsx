@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function Terms() {
   return (
     <>
-      <main className="h-[100vh] overflow-y-auto w-full bg-gray-800">
+      <main className="w-full">
         <Header />
 
         <section className="w-full max-w-screen-xl mx-auto px-4 py-4 lg:py-8">

@@ -30,7 +30,7 @@ export default function Collections() {
 
   return (
     <>
-      <main className="h-[100vh] overflow-y-auto w-full bg-gray-800">
+      <main className="w-full">
         <Header />
         <section className="w-full max-w-screen-2xl mx-auto px-6 py-6 lg:py-12 xl:py-16">
           <div className="w-full flex justify-center items-center">
