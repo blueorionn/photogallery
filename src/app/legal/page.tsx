@@ -26,7 +26,7 @@ export default function Legal() {
       <main className="w-full">
         <Header />
 
-        <section className="w-full max-w-screen-xl mx-auto px-4 py-4 lg:py-8">
+        <section className="w-full max-w-screen-2xl mx-auto px-4 py-4 lg:py-8">
           <div className="my-4 md:my-8 lg:my-12 xl:my-16">
             <h1 className="my-2 lg:my-4 text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-gray-100">
               Legal Information

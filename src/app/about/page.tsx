@@ -31,7 +31,7 @@ export default function About() {
             About this project
           </h1>
         </section>
-        <section className="w-full max-w-screen-xl mx-auto px-4 py-4 lg:py-8 xl:py-12 text-base xl:text-lg font-normal xl:font-medium text-gray-300">
+        <section className="w-full max-w-screen-2xl mx-auto px-4 py-4 lg:py-8 xl:py-12 text-base xl:text-lg font-normal xl:font-medium text-gray-300">
           <p className="mt-2 xl:mt-4">Welcome to our PhotoGallery!</p>
           <a
             href=""
