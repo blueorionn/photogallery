@@ -19,6 +19,13 @@ export default function Collections() {
   // intersection observer
   const { ref, isIntersecting } = useIntersectionObserver<HTMLDivElement>();
 
+  // increment page if intersection
+  useEffect(() => {
+    if (isIntersecting) {
+      setPage((page) => page++);
+    }
+  }, [isIntersecting]);
+
   // fetched data
   const { data, fetchResource } = useFetch<{
     result: { name: string; id: string; images: PhotoCollectionType }[];
@@ -48,13 +55,6 @@ export default function Collections() {
       setCollections([...data?.result]);
     }
   }, [data]);
-
-  // increment page if intersection
-  useEffect(() => {
-    if (isIntersecting) {
-      setPage((page) => page++);
-    }
-  }, [isIntersecting]);
 
   return (
     <>

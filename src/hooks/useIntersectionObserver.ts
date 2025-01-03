@@ -35,9 +35,7 @@ export function useIntersectionObserver<T extends HTMLElement>(
     observer.observe(element);
 
     return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
+      observer.disconnect();
     };
   }, [ref, memoizedOptions]);
 
