@@ -60,9 +60,11 @@ export default function ImageGallery({ data }: { data: PhotoCollectionType }) {
             >
               {item.map((image) => {
                 return (
-                  <Fragment key={image.id}>
+                  <div key={image.id}>
                     <Link
                       href={image.url}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
                       className="relative block w-full transition-all before:hidden hover:before:block before:content-normal before:h-full before:w-full before:absolute before:inset-0 before:bg-[rgba(0,0,0,.15)]"
                     >
                       <Image
@@ -75,7 +77,24 @@ export default function ImageGallery({ data }: { data: PhotoCollectionType }) {
                         className="h-full w-full object-cover rounded"
                       />
                     </Link>
-                  </Fragment>
+                    <Link
+                      target="_blank"
+                      href={image.photographer_url}
+                      className="flex gap-2 items-center my-2 md:my-4 xl:my-6"
+                    >
+                      <Image
+                        src={"/icons/pexels-logo.png"}
+                        alt="Pexels attribution logo"
+                        height={50}
+                        width={50}
+                        loading="lazy"
+                        className="h-4 w-4 object-contain"
+                      />
+                      <span className="text-gray-400">
+                        Photo by {image.photographer}
+                      </span>
+                    </Link>
+                  </div>
                 );
               })}
             </div>
