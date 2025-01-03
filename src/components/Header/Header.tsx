@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Mochiy_Pop_P_One } from "next/font/google";
+import { Mochiy_Pop_P_One, Inter } from "next/font/google";
 import styles from "./styles.module.css";
 
 // header font
@@ -12,6 +12,8 @@ const headerFont = Mochiy_Pop_P_One({
   weight: "400",
   style: "normal",
 });
+
+const inter = Inter({subsets: ["latin"], weight: "500"})
 
 // Header Component
 export default function Header() {
@@ -52,29 +54,29 @@ export default function Header() {
             </div>
           </Link>
 
-          <div className="mt-2 lg:mt-0">
+          <div className={`mt-2 lg:mt-0 ${inter.className} text-gray-300`}>
             <div className="hidden xl:flex gap-8 xl:mt-2">
               <Link
                 href="/about"
-                className={`text-gray-200 ${isLinkActive("/about")}`}
+                className={`${isLinkActive("/about")}`}
               >
-                <span className="tex-base font-semibold hover:text-emerald-500 transition-all">
+                <span className="tex-base hover:text-emerald-500 transition-all">
                   About
                 </span>
               </Link>
               <Link
                 href="/terms"
-                className={`text-gray-200 ${isLinkActive("/terms")}`}
+                className={`${isLinkActive("/terms")}`}
               >
-                <span className="tex-base font-semibold hover:text-emerald-500 transition-all">
+                <span className="tex-base hover:text-emerald-500 transition-all">
                   Terms
                 </span>
               </Link>
               <Link
                 href="/legal"
-                className={`text-gray-200 ${isLinkActive("/legal")}`}
+                className={`${isLinkActive("/legal")}`}
               >
-                <span className="tex-base font-semibold hover:text-emerald-500 transition-all">
+                <span className="tex-base hover:text-emerald-500 transition-all">
                   Legal
                 </span>
               </Link>
@@ -137,28 +139,28 @@ export default function Header() {
               </svg>
             </button>
           </div>
-          <div className="flex flex-col gap-2 mt-8">
+          <div className={`flex flex-col gap-2 mt-8 ${inter.className} text-gray-300`}>
             <Link
               href="/about"
-              className={`text-gray-200 ${isLinkActive("/about")}`}
+              className={`${isLinkActive("/about")}`}
             >
-              <span className="tex-base font-medium hover:text-emerald-500 transition-all">
+              <span className="tex-base hover:text-emerald-500 transition-all">
                 About
               </span>
             </Link>
             <Link
               href="/terms"
-              className={`text-gray-200 ${isLinkActive("/terms")}`}
+              className={`${isLinkActive("/terms")}`}
             >
-              <span className="tex-base font-medium hover:text-emerald-500 transition-all">
+              <span className="tex-base hover:text-emerald-500 transition-all">
                 Terms
               </span>
             </Link>
             <Link
               href="/legal"
-              className={`text-gray-200 ${isLinkActive("/legal")}`}
+              className={`${isLinkActive("/legal")}`}
             >
-              <span className="tex-base font-medium hover:text-emerald-500 transition-all">
+              <span className="tex-base hover:text-emerald-500 transition-all">
                 Legal
               </span>
             </Link>
