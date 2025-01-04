@@ -83,19 +83,19 @@ export default function Collections() {
         ref={ref}
       >
         {frozen ? (
-          <span className="min-w-36 inline-block h-0.5 bg-gray-700"></span>
+          <span className="min-w-16 md:min-w-24 xl:min-w-36 inline-block h-0.5 bg-gray-700"></span>
         ) : (
           ""
         )}
         {frozen ? (
-          <span className="text-gray-500 font-medium text-base xl:text-lg">
+          <span className="text-gray-500 font-medium text-base xl:text-lg text-nowrap whitespace-nowrap">
             You have reached the end
           </span>
         ) : (
           ""
         )}
         {frozen ? (
-          <span className="min-w-36 inline-block h-0.5 bg-gray-700"></span>
+          <span className="min-w-16 md:min-w-24 xl:min-w-36 inline-block h-0.5 bg-gray-700"></span>
         ) : (
           ""
         )}
