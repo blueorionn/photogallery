@@ -169,7 +169,7 @@ export default function Header() {
         </nav>
 
         <aside
-          className={`xl:hidden min-h-[90vh] h-full z-[10] w-full absolute flex flex-col px-6 transition-all ${reflectSideBarToogle(
+          className={`xl:hidden min-h-[90vh] h-full z-[10] w-full absolute flex flex-col px-6 transition-all bg-background ${reflectSideBarToogle(
             [`${styles["_showSidebar"]}`],
             [`${styles["_hideSidebar"]}`]
           )}`}
