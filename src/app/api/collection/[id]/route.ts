@@ -1,6 +1,7 @@
 import { type NextRequest } from "next/server";
 import { photoCollections } from "@/data/collections";
 import { type PhotoCollectionType } from "@/shared/types/collection";
+import { distributePhotosEvenly } from "@/shared/utils/funcs";
 
 // cache result
 export const dynamic = "force-dynamic";
@@ -12,6 +13,9 @@ export async function GET(
 ) {
   // requesting collection id
   const collectionId = (await params).id;
+
+  // requesting search params
+  const searchParams = request.nextUrl.searchParams;
 
   // collection of photos
   const collectionOfPhoto = photoCollections as Record<string, string>;
@@ -27,18 +31,36 @@ export async function GET(
   }
 
   // requesting page number
-  const searchParams = request.nextUrl.searchParams;
   let page: string | number | null = searchParams.get("page");
 
   // converting page query to number type
   page = parseInt(`${page}`) || 1;
 
-  // checking validity of pageNumber
+  // checking validity of page number
   if (!page || typeof page !== "number") {
     return Response.json(
       { message: `Either page number is missing or not valid.` },
       { status: 415 }
     );
+  }
+
+  // requesting column number
+  let col: string | number | null = searchParams.get("col");
+
+  // converting col query to number type
+  col = parseInt(`${col}`) || 1;
+
+  // checking validity of col
+  if (!col || typeof col !== "number") {
+    return Response.json(
+      { message: "Either column number is missing or not valid" },
+      { status: 415 }
+    );
+  }
+
+  // checking column range.
+  if (col > 3 || col < 1) {
+    return Response.json({ message: "Column out of range" }, { status: 415 });
   }
 
   // fetching data
@@ -53,10 +75,13 @@ export async function GET(
   const result: PhotoCollectionType = await data.json();
 
   // filter result for photo type
-  const collection = {
-    ...result,
-    media: result.media.filter((img) => img.type == "Photo"),
+  const photos = result.media.filter((img) => img.type == "Photo");
+  const distributedPhoto = distributePhotosEvenly(photos, col);
+  const collections = {
+    colOne: distributedPhoto[0],
+    colTwo: distributedPhoto.length > 1 ? distributedPhoto[1] : [],
+    colThree: distributedPhoto.length > 2 ? distributedPhoto[2] : [],
   };
 
-  return Response.json(collection);
+  return Response.json(collections);
 }
