@@ -95,7 +95,6 @@ export default function CollectionGallery({
 
   // update collections
   useEffect(() => {
-    if (data?.colOne.length || [].length < 1) setFrozen(true);
     if (data) {
       setCollections((prev) => {
         if (!prev) return data;
@@ -106,6 +105,9 @@ export default function CollectionGallery({
           colThree: [...prev.colThree, ...data.colThree],
         };
       });
+
+      // if result is empty.
+      if(data.colOne.length < 1) setFrozen(true);
     }
   }, [data, frozen]);
 
