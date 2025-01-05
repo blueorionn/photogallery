@@ -46,9 +46,23 @@ export default function CollectionCarousel() {
     }
   }, [data]);
 
+  // predefined widths
+  const widthRange = { smallWidth: 0, mediumWidth: 768, largeWidth: 1280 };
+
   // button handlers for transition
   const handleForward = () => {
-    if (translatedWidth < -width) return;
+    if (width >= widthRange.smallWidth && width <= widthRange.mediumWidth) {
+      // small width
+      if (translatedWidth < -width * 6) return;
+    }
+    if (width >= widthRange.mediumWidth && width <= widthRange.largeWidth) {
+      // medium width
+      if (translatedWidth < -width * 2) return;
+    }
+    if (width >= widthRange.largeWidth) {
+      // large width
+      if (translatedWidth < -width) return;
+    }
     setTranslatedWidth((prev) => prev - 250);
   };
 

@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <section className="w-full max-w-screen-2xl relative mx-auto my-6 md:my-12 xl:my-24 xl:flex xl:flex-row-reverse xl:justify-between">
         <section className="w-full xl:ml-24 grid grid-cols-2 gap-4 xl:relative">
-          <div className="absolute xl:hidden h-full w-full inset-0 bg-background dark:bg-background-dark opacity-50">
+          <div className="absolute xl:hidden h-full w-full inset-0 bg-background dark:bg-background-dark opacity-80 dark:opacity-50">
             <span className="sr-only">Background cover</span>
           </div>
           <div className="w-full flex flex-col gap-4">
