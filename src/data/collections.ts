@@ -22,3 +22,8 @@ export const photoCollections = {
   "Winter Wallpapers": "46qp0mt",
   "Yellow Flowers Aesthetic": "ylxa5x6",
 };
+
+export const FeaturedCollection = {
+  name: "Personal Collections",
+  id: "1tf6jdl",
+};

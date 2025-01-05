@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { photoCollections } from "@/data/collections";
 import Header from "@/components/Header/Header";
-import CollectionGallery from "@/layouts/ImageGallery/CollectionGallery";
+import CollectionGallery from "@/components/ImageGallery/CollectionGallery";
 
 // dynamic metadata
 export async function generateMetadata({
