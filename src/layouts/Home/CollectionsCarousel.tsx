@@ -92,7 +92,9 @@ export default function CollectionCarousel() {
                 }`}
                 onClick={() => setCurrentCollection(collection[1])}
               >
-                <span className="text-nowrap group-hover:text-gray-700 group-hover:dark:text-gray-300">{collection[0]}</span>
+                <span className="text-nowrap group-hover:text-gray-700 group-hover:dark:text-gray-300">
+                  {collection[0]}
+                </span>
               </button>
             );
           })}
@@ -119,7 +121,7 @@ export default function CollectionCarousel() {
               return (
                 <div
                   key={i}
-                  className={`w-full rounded ${
+                  className={`w-full rounded px-2 ${
                     i === 0 ? "xl:row-span-2 h-full" : "max-h-96 "
                   }`}
                 >

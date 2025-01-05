@@ -96,7 +96,10 @@ export default function FeaturedGallery() {
           {collections.colOne.map((photo, i) => {
             if (i > 2) return;
             return (
-              <div key={`${photo.id}_${generateRandomString()}`}>
+              <div
+                key={`${photo.id}_${generateRandomString()}`}
+                className="px-2"
+              >
                 <Link
                   href={photo.url}
                   target="_blank"
