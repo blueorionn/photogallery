@@ -59,17 +59,17 @@ export default function Header() {
           <div className={`mt-2 lg:mt-0 ${inter.className} text-gray-300`}>
             <div className="hidden xl:flex items-center gap-4 xl:mt-2">
               <Link href="/about" className={`${isLinkActive("/about")}`}>
-                <span className="tex-base hover:text-emerald-500 transition-all">
+                <span className="text-base hover:text-emerald-500 transition-all">
                   About
                 </span>
               </Link>
               <Link href="/terms" className={`${isLinkActive("/terms")}`}>
-                <span className="tex-base hover:text-emerald-500 transition-all">
+                <span className="text-base hover:text-emerald-500 transition-all">
                   Terms
                 </span>
               </Link>
               <Link href="/legal" className={`${isLinkActive("/legal")}`}>
-                <span className="tex-base hover:text-emerald-500 transition-all">
+                <span className="text-base hover:text-emerald-500 transition-all">
                   Legal
                 </span>
               </Link>
@@ -183,7 +183,7 @@ export default function Header() {
                 "/about"
               )}`}
             >
-              <span className="tex-base hover:text-emerald-500 transition-all">
+              <span className="text-base hover:text-emerald-500 transition-all">
                 About
               </span>
             </Link>
@@ -193,7 +193,7 @@ export default function Header() {
                 "/terms"
               )}`}
             >
-              <span className="tex-base hover:text-emerald-500 transition-all">
+              <span className="text-base hover:text-emerald-500 transition-all">
                 Terms
               </span>
             </Link>
@@ -203,7 +203,7 @@ export default function Header() {
                 "/legal"
               )}`}
             >
-              <span className="tex-base hover:text-emerald-500 transition-all">
+              <span className="text-base hover:text-emerald-500 transition-all">
                 Legal
               </span>
             </Link>
