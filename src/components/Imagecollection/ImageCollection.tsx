@@ -2,6 +2,7 @@
 import { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { generateRandomString } from "@/shared/utils/funcs";
 import { type PhotoCollectionType } from "@/shared/types/collection";
 
 export default function ImageCollection({
@@ -15,7 +16,7 @@ export default function ImageCollection({
 
   return collections.map((collection) => {
     return (
-      <Fragment key={collection.id}>
+      <Fragment key={`${collection.id}_${generateRandomString()}`}>
         <div>
           <div className="w-full h-72 lg:h-80 xl:h-96 rounded-sm lg:rounded flex flex-col gap-2 lg:gap-4 xl:gap-6 overflow-hidden">
             <Link
@@ -67,7 +68,7 @@ export default function ImageCollection({
               </div>
             </Link>
           </div>
-          <h2 className="mx-1 lg:mx-2 py-2 lg:py-4 text-lg xl:text-xl text-gray-400">
+          <h2 className="mx-1 lg:mx-2 py-2 lg:py-4 text-lg xl:text-xl text-gray-600 dark:text-gray-400">
             {collection.name}
           </h2>
         </div>

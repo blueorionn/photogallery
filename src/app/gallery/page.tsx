@@ -25,7 +25,7 @@ export default async function Page() {
         <Header />
         <section className="w-full max-w-screen-2xl mx-auto px-6 py-6 lg:py-12 xl:py-16">
           <div className="w-full flex justify-center items-center">
-            <h1 className="text-lg lg:text-xl xl:text-2xl font-semibold xl:font-bold text-gray-400">
+            <h1 className="text-lg lg:text-xl xl:text-2xl font-semibold xl:font-bold text-gray-600 dark:text-gray-400">
               Browse Photos
             </h1>
           </div>

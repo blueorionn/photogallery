@@ -153,7 +153,7 @@ export default function CollectionGallery({
                     loading="lazy"
                     className="h-4 w-4 object-contain"
                   />
-                  <span className="text-gray-400">
+                  <span className="text-gray-500 dark:text-gray-400">
                     Photo by {photo.photographer}
                   </span>
                 </Link>

@@ -26,7 +26,7 @@ export default function About() {
     <>
       <main className="w-full">
         <Header />
-        <section className="w-full max-w-screen-lg mx-auto px-4 py-6 lg:py-12 xl:py-24 text-base xl:text-lg font-normal xl:font-medium text-gray-400">
+        <section className="w-full max-w-screen-lg mx-auto px-4 py-6 lg:py-12 xl:py-24 text-base xl:text-lg font-normal xl:font-medium text-gray-600 dark:text-gray-400">
           <h1 className="text-lg lg:text-xl xl:text-2xl font-bold">
             About this project
           </h1>
@@ -35,7 +35,7 @@ export default function About() {
             href=""
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-2 xl:mt-4 text-blue-400"
+            className="inline-block mt-2 xl:mt-4 text-blue-600 dark:text-blue-400"
           >
             Photogallery github repository
           </a>
@@ -44,7 +44,9 @@ export default function About() {
             display the beauty of photography. All the photos and videos
             showcased here are fetched using the{" "}
             <Link href="https://www.pexels.com/api/" target="_blank">
-              <span className="text-blue-500">Pexels API</span>
+              <span className="text-blue-600 dark:text-blue-500">
+                Pexels API
+              </span>
             </Link>
             , a platform that provides high-quality and free-to-use images and
             videos from talented photographers around the world.
@@ -75,7 +77,7 @@ export default function About() {
               target="_blank"
               className="mx-1"
             >
-              <span className="text-blue-500">Pexels</span>
+              <span className="text-blue-600 dark:text-blue-500">Pexels</span>
             </Link>
             directly to view more from the original creators and download images
             according to their terms.
@@ -90,11 +92,11 @@ export default function About() {
             For further details on acceptable use and our policies, please visit
             our
             <Link href="/legal" className="mx-1">
-              <span className="text-blue-500">Legal</span>
+              <span className="text-blue-600 dark:text-blue-500">Legal</span>
             </Link>
             and
             <Link href="/terms" className="mx-1">
-              <span className="text-blue-500">Terms</span>
+              <span className="text-blue-600 dark:text-blue-500">Terms</span>
             </Link>
             pages.
           </p>

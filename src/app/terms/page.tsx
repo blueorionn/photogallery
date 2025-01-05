@@ -26,7 +26,7 @@ export default function Terms() {
       <main className="w-full">
         <Header />
 
-        <section className="w-full max-w-screen-lg mx-auto px-4 py-4 lg:py-8 text-gray-400">
+        <section className="w-full max-w-screen-lg mx-auto px-4 py-4 lg:py-8 text-gray-600 dark:text-gray-400">
           <div className="my-4 md:my-8 lg:my-12 xl:my-16">
             <h1 className="my-2 lg:my-4 text-base md:text-lg lg:text-xl xl:text-2xl font-bold">
               Terms of Use
