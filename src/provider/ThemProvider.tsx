@@ -8,7 +8,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
   return (
     <>
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
-        <body className={theme}>
+        <body className="dark">
           {children}
         </body>
       </ThemeContext.Provider>
