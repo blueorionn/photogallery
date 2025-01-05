@@ -1,10 +1,12 @@
-import FirstPage from "@/layouts/Home/FirstPage";
+import Header from "@/components/Header/Header";
+import Home from "@/layouts/Home/Home";
 
-export default function Home() {
+export default function Page() {
   return (
     <>
-      <main className="w-full">
-        <FirstPage />
+      <main className="w-full bg-background">
+        <Header />
+        <Home />
       </main>
     </>
   );
