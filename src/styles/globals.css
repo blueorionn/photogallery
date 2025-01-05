@@ -3,15 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #f3f4f6;
-  --foreground: #030712;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #030712;
-    --foreground: #f3f4f6;
-  }
+  --default-light: #f3f4f6;
+  --default-dark: #030712;
 }
 
 html {
@@ -23,8 +16,6 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  color: var(--foreground);
-  background-color: var(--background);
   font-family: "Inter var experimental", "Inter var", Inter, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
