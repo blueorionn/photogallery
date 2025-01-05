@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Ubuntu } from "next/font/google";
 import CollectionCarousel from "./CollectionsCarousel";
+import FeaturedGallery from "@/components/ImageGallery/FeaturedGallery";
 
 // fonts
 const ubuntu = Ubuntu({ subsets: ["latin"], weight: "500" });
@@ -92,6 +93,7 @@ export default function Home() {
           <div className="my-4 md:my-8 xl:my-12 flex items-center gap-2 lg:gap-4 relative z-[50] px-4 xl:px-0">
             <Link
               href={"/gallery"}
+              target="_blank"
               className="py-2 lg:py-4 w-36 lg:w-40 xl:w-44 flex justify-center items-center gap-2 rounded-full bg-teal-700 hover:bg-transparent border-2 border-teal-700 transition-all"
             >
               <svg
@@ -107,6 +109,7 @@ export default function Home() {
             </Link>
             <Link
               href={"/collections"}
+              target="_blank"
               className="group py-2 lg:py-4 w-36 lg:w-40 xl:w-44 flex justify-center items-center gap-2 rounded-full"
             >
               <svg
@@ -139,7 +142,20 @@ export default function Home() {
         >
           Browse
         </h2>
-        <div className="w-full mt-8"></div>
+        <div className="w-full mt-8">
+          <FeaturedGallery />
+        </div>
+        <div className="group w-full flex justify-center items-center mt-4 md:mt-8 xl:mt-12">
+          <Link
+            href={`/gallery`}
+            target="_blank"
+            className="p-2.5 border-2 border-gray-500 rounded-md group-hover:border-gray-400"
+          >
+            <span className="text-base text-gray-500 group-hover:text-gray-400">
+              Visit Gallery
+            </span>
+          </Link>
+        </div>
       </section>
     </>
   );

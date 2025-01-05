@@ -6,3 +6,13 @@ export function distributePhotosEvenly(array: PhotoCollectionMedia[], chunks: nu
     array.filter((_, j) => j % chunks === i)
   );
 }
+
+// Generate random char
+export function generateRandomString(length= 7) {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return result;
+}
