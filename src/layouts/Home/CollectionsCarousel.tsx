@@ -62,7 +62,7 @@ export default function CollectionCarousel() {
       <div className="w-full relative overflow-hidden">
         <button
           type="button"
-          className="absolute h-full p-2.5 z-[10] bg-background brightness-150"
+          className="absolute h-full p-2.5 z-[10] bg-background dark:bg-background-dark dark:brightness-150"
           onClick={handleBackward}
         >
           <span className="sr-only">Backword button</span>
@@ -76,7 +76,7 @@ export default function CollectionCarousel() {
         </button>
         <div
           aria-label="collections navigation"
-          className={`w-full relative flex gap-4 transition-all`}
+          className={`group w-full relative flex gap-4 transition-all text-gray-500 dark:text-gray-400`}
           style={{ transform: `translateX(${translatedWidth}px)` }}
         >
           {/* collections key */}
@@ -87,19 +87,19 @@ export default function CollectionCarousel() {
                 key={i}
                 className={`p-2.5 border-2 hover:border-teal-700 rounded-md transition-all hover:bg-teal-700 ${
                   currentCollection === collection[1]
-                    ? "bg-teal-700 border-teal-700"
-                    : "border-gray-600"
+                    ? "bg-teal-600 dark:bg-teal-700 border-teal-600 dark:border-teal-700"
+                    : "border-gray-400 dark:border-gray-600"
                 }`}
                 onClick={() => setCurrentCollection(collection[1])}
               >
-                <span className="text-nowrap">{collection[0]}</span>
+                <span className="text-nowrap group-hover:text-gray-700 group-hover:dark:text-gray-300">{collection[0]}</span>
               </button>
             );
           })}
         </div>
         <button
           type="button"
-          className="absolute top-0 right-0 h-full p-2.5 z-[10] bg-background brightness-150"
+          className="absolute top-0 right-0 h-full p-2.5 z-[10] bg-background dark:bg-background-dark dark:brightness-150"
           onClick={handleForward}
         >
           <span className="sr-only">Forward button</span>
@@ -153,9 +153,9 @@ export default function CollectionCarousel() {
         <Link
           href={`/collection/${currentCollection}`}
           target="_blank"
-          className="p-2.5 border-2 border-gray-500 rounded-md group-hover:border-gray-400"
+          className="p-2.5 border-2 border-gray-500 rounded-md group-hover:border-gray-600 group-hover:dark:border-gray-400"
         >
-          <span className="text-base text-gray-500 group-hover:text-gray-400">
+          <span className="text-base text-gray-500 group-hover:text-gray-600 group-hover:dark:text-gray-400">
             Visit Collection
           </span>
         </Link>

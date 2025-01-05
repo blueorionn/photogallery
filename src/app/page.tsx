@@ -5,7 +5,7 @@ import Footer from "@/components/Footer/Footer";
 export default function Page() {
   return (
     <>
-      <main className="w-full bg-background">
+      <main className="w-full bg-background dark:bg-background-dark">
         <Header />
         <Home />
         <Footer />

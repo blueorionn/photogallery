@@ -37,8 +37,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full relative z-[100] border-b xl:border-b-2 border-gray-800">
-        <nav className="relative z-[100] mx-auto w-full max-w-screen-2xl p-4 md:py-6 lg:py-8 flex justify-between items-center bg-background">
+      <header className="w-full relative z-[100] border-b xl:border-b-2 border-gray-200 dark:border-gray-800">
+        <nav className="relative z-[100] mx-auto w-full max-w-screen-2xl p-4 md:py-6 lg:py-8 flex justify-between items-center bg-background dark:bg-background-dark">
           <Link href={"/"}>
             <div className="flex justify-center items-center gap-1 md:gap-2 lg:gap-4 cursor-pointer">
               <Image
@@ -49,14 +49,16 @@ export default function Header() {
                 className="aspect-auto h-8 w-8"
               />
               <h1
-                className={`text-lg md:text-xl lg:text-2xl text-gray-100 cursor-pointer ${headerFont.className}`}
+                className={`text-lg md:text-xl lg:text-2xl text-gray-900 dark:text-gray-100 cursor-pointer ${headerFont.className}`}
               >
                 Photo<span className="text-emerald-500">gallery</span>
               </h1>
             </div>
           </Link>
 
-          <div className={`mt-2 lg:mt-0 ${inter.className} text-gray-300`}>
+          <div
+            className={`mt-2 lg:mt-0 ${inter.className} text-gray-700 dark:text-gray-300`}
+          >
             <div className="hidden xl:flex items-center gap-4 xl:mt-2">
               <Link href="/about" className={`${isLinkActive("/about")}`}>
                 <span className="text-base hover:text-emerald-500 transition-all">
@@ -73,13 +75,13 @@ export default function Header() {
                   Legal
                 </span>
               </Link>
-              <div className="h-6 w-0.5 bg-gray-600 border border-gray-600">
+              <div className="h-6 w-0.5 border bg-gray-400 border-gray-400 dark:bg-gray-600 dark:border-gray-600">
                 <span className="sr-only">Divider</span>
               </div>
               <button
                 type="button"
                 onClick={() => themeManager?.toggleTheme()}
-                className="min-w-12 p-0.5 rounded-full flex bg-gray-800 border border-gray-500"
+                className="min-w-12 p-0.5 rounded-full border flex bg-gray-200 dark:bg-gray-800 border-gray-400 dark:border-gray-500"
               >
                 <span className="sr-only">Theme toogle button</span>
                 <div className="relative w-max flex justify-end items-center rounded-full dark:grow transition-all duration-300 ease-in-out">
@@ -106,7 +108,7 @@ export default function Header() {
               >
                 <span className="sr-only">Github repo url</span>
                 <svg
-                  className="fill-gray-400 h-3 w-3 md:h-4 md:w-4 lg:h-5 lg:w-5 hover:fill-gray-200 transition-all"
+                  className="fill-gray-500 dark:fill-gray-400 h-3 w-3 md:h-4 md:w-4 lg:h-5 lg:w-5 hover:fill-gray-800 dark:hover:fill-gray-200 transition-all"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 100 100"
                 >
@@ -124,14 +126,11 @@ export default function Header() {
               >
                 <span className="sr-only">My Twitter profile</span>
                 <svg
-                  className="fill-gray-400 h-3 w-3 md:h-4 md:w-4 hover:fill-gray-200 transition-all"
+                  className="fill-gray-500 dark:fill-gray-400 h-3 w-3 md:h-4 md:w-4 hover:fill-gray-800 dark:hover:fill-gray-200 transition-all"
                   viewBox="0 0 1200 1227"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
-                    fill="white"
-                  />
+                  <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" />
                 </svg>
               </Link>
             </div>
@@ -144,13 +143,13 @@ export default function Header() {
               <span className="sr-only">Menu Button</span>
               <div className={`h-max w-max relative`}>
                 <span
-                  className={`relative block my-1 h-0.5 w-4 transition-all bg-gray-300 ${
+                  className={`relative block my-1 h-0.5 w-4 transition-all bg-gray-700 dark:bg-gray-300 ${
                     isSideBarOpen ? "translate-y-[150%] rotate-[225deg]" : ""
                   }`}
                   aria-label="menu-top"
                 ></span>
                 <span
-                  className={`relative block my-1 h-0.5 w-2 transition-all bg-gray-300 ${
+                  className={`relative block my-1 h-0.5 w-2 transition-all bg-gray-700 dark:bg-gray-300 ${
                     isSideBarOpen
                       ? "translate-x-[200%] hidden"
                       : "translate-x-[100%]"
@@ -158,7 +157,7 @@ export default function Header() {
                   aria-label="menu-middle"
                 ></span>
                 <span
-                  className={`relative block my-1 h-0.5 w-4 transition-all bg-gray-300 ${
+                  className={`relative block my-1 h-0.5 w-4 transition-all bg-gray-700 dark:bg-gray-300 ${
                     isSideBarOpen ? "translate-y-[-150%] rotate-[135deg]" : ""
                   }`}
                   aria-label="menu-bottom"
@@ -169,17 +168,17 @@ export default function Header() {
         </nav>
 
         <aside
-          className={`xl:hidden min-h-[90vh] h-full z-[10] w-full absolute flex flex-col px-6 transition-all bg-background ${reflectSideBarToogle(
+          className={`xl:hidden min-h-[90vh] h-full z-[10] w-full absolute flex flex-col px-6 transition-all bg-background dark:bg-background-dark ${reflectSideBarToogle(
             [`${styles["_showSidebar"]}`],
             [`${styles["_hideSidebar"]}`]
           )}`}
         >
           <div
-            className={`flex flex-col justify-center mt-8 ${inter.className} text-gray-400`}
+            className={`flex flex-col justify-center mt-8 ${inter.className} text-gray-500 dark:text-gray-400`}
           >
             <Link
               href="/about"
-              className={`w-full py-4 border-b border-gray-700 ${isLinkActive(
+              className={`w-full py-4 border-b border-gray-300 dark:border-gray-700 ${isLinkActive(
                 "/about"
               )}`}
             >
@@ -189,7 +188,7 @@ export default function Header() {
             </Link>
             <Link
               href="/terms"
-              className={`w-full py-4 border-b border-gray-700 ${isLinkActive(
+              className={`w-full py-4 border-b border-gray-300 dark:border-gray-700 ${isLinkActive(
                 "/terms"
               )}`}
             >
@@ -199,7 +198,7 @@ export default function Header() {
             </Link>
             <Link
               href="/legal"
-              className={`w-full py-4 border-b border-gray-700 ${isLinkActive(
+              className={`w-full py-4 border-b border-gray-300 dark:border-gray-700 ${isLinkActive(
                 "/legal"
               )}`}
             >
@@ -207,12 +206,12 @@ export default function Header() {
                 Legal
               </span>
             </Link>
-            <div className="w-ful my-4 p-4 rounded flex bg-gray-800">
+            <div className="w-ful my-4 p-4 rounded flex bg-gray-300 dark:bg-gray-800">
               <span className="flex-grow">Appearance</span>
               <button
                 type="button"
                 onClick={() => themeManager?.toggleTheme()}
-                className="min-w-12 p-0.5 rounded-full flex bg-gray-800 border border-gray-500"
+                className="min-w-12 p-0.5 rounded-full flex border bg-gray-200 dark:bg-gray-800 border-gray-400 dark:border-gray-500"
               >
                 <span className="sr-only">Theme toogle button</span>
                 <div className="relative w-max flex justify-end items-center rounded-full dark:grow transition-all duration-300 ease-in-out">
@@ -241,7 +240,7 @@ export default function Header() {
               >
                 <span className="sr-only">Github repo url</span>
                 <svg
-                  className="fill-gray-400 h-5 w-5 hover:fill-gray-200 transition-all"
+                  className="fill-gray-500 dark:fill-gray-400 h-5 w-5 hover:fill-gray-800 dark:hover:fill-gray-200 transition-all"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 100 100"
                 >
@@ -259,14 +258,11 @@ export default function Header() {
               >
                 <span className="sr-only">My Twitter profile</span>
                 <svg
-                  className="fill-gray-400 h-4 w-4 hover:fill-gray-200 transition-all"
+                  className="fill-gray-500 dark:fill-gray-400 h-4 w-4 hover:fill-gray-800 dark:hover:fill-gray-200 transition-all"
                   viewBox="0 0 1200 1227"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
-                    fill="white"
-                  />
+                  <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" />
                 </svg>
               </Link>
             </div>
