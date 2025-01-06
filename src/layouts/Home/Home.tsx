@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { Ubuntu } from "next/font/google";
+import { motion } from "framer-motion";
 import CollectionCarousel from "./CollectionsCarousel";
 import FeaturedGallery from "@/components/ImageGallery/FeaturedGallery";
 
@@ -75,7 +77,11 @@ export default function Home() {
           <div className="w-full absolute xl:hidden inset-0 z-[10] py-4 bg-background dark:bg-background-dark blur-xl opacity-80">
             <span className="sr-only">Bg Background</span>
           </div>
-          <div className="max-w-screen-md w-full relative z-[50] my-4 md:my-6 xl:my-8 px-4 xl:px-0">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 4 } }}
+            className="max-w-screen-md w-full relative z-[50] my-4 md:my-6 xl:my-8 px-4 xl:px-0"
+          >
             <h1
               className={`${ubuntu.className} text-xl md:text-3xl xl:text-6xl cursor-default text-gray-700 dark:text-gray-300`}
             >
@@ -89,8 +95,12 @@ export default function Home() {
               portfolio, showcasing my work with Pexels API and modern
               frameworks like Next.js.
             </h3>
-          </div>
-          <div className="my-4 md:my-8 xl:my-12 flex items-center gap-2 lg:gap-4 relative z-[50] px-4 xl:px-0">
+          </motion.div>
+          <motion.div
+            className="my-4 md:my-8 xl:my-12 flex items-center gap-2 lg:gap-4 relative z-[50] px-4 xl:px-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 4, delay: 1 } }}
+          >
             <div className="group">
               <Link
                 href={"/gallery"}
@@ -125,7 +135,7 @@ export default function Home() {
                 Collections
               </span>
             </Link>
-          </div>
+          </motion.div>
         </section>
       </section>
       <section className="w-full max-w-screen-2xl mx-auto relative my-40 sm:my-44 md:my-48">
