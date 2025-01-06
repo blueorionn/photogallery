@@ -20,7 +20,7 @@ export const useFetch = <T>() => {
             setError(true);
           }
         } catch (error) {
-          console.error("Error", error)
+          console.error("Error", error);
           setError(true);
         } finally {
           setLoading(false);

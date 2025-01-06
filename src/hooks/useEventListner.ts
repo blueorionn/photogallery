@@ -6,7 +6,7 @@ export function useEventListener<
   KW extends keyof WindowEventMap,
   KH extends keyof HTMLElementEventMap & keyof SVGElementEventMap,
   KM extends keyof MediaQueryListEventMap,
-  T extends HTMLElement | SVGAElement | MediaQueryList = HTMLElement
+  T extends HTMLElement | SVGAElement | MediaQueryList = HTMLElement,
 >(
   eventName: KW | KH | KM,
   handler: (

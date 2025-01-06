@@ -67,10 +67,7 @@ export default function FeaturedGallery() {
 
     const fetchCollection = async () => {
       try {
-        await fetchResource(
-          `/api/gallery?page=${page}&col=${col}`,
-          signal
-        );
+        await fetchResource(`/api/gallery?page=${page}&col=${col}`, signal);
 
         // if status code is not 200
         if (error) {
