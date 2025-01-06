@@ -13,7 +13,7 @@ export default function Footer() {
             >
               <span className="sr-only">Github repo url</span>
               <svg
-                className="fill-gray-500 h-6 w-6 lg:h-8 lg:w-8 hover:fill-gray-700 hover:dark:fill-gray-300 transition-all"
+                className="fill-gray-500 h-4 w-4 md:h-6 md:w-6 hover:fill-gray-700 hover:dark:fill-gray-300 transition-all"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 100 100"
               >
@@ -31,7 +31,7 @@ export default function Footer() {
             >
               <span className="sr-only">My Twitter profile</span>
               <svg
-                className="fill-gray-500 h-4 w-4 md:h-5 md:w-5 lg:h-7 lg:w-7 hover:fill-gray-700 hover:dark:fill-gray-300 transition-all"
+                className="fill-gray-500 h-4 w-4 md:h-5 md:w-5 hover:fill-gray-700 hover:dark:fill-gray-300 transition-all"
                 viewBox="0 0 1200 1227"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -39,22 +39,25 @@ export default function Footer() {
               </svg>
             </Link>
           </div>
-          <div className="flex gap-2 xl:gap-4 justify-center items-center text-gray-500">
+          <div className="flex justify-center items-center text-gray-500">
             <Link href="/about">
-              <span className="text-base hover:text-emerald-500 transition-all">
+              <span className="px-2 md:px-4 lg:px-6 inline-block border-r-2 border-gray-300 dark:border-gray-600 text-base hover:text-emerald-500 transition-all">
                 About
               </span>
             </Link>
             <Link href="/terms">
-              <span className="text-base hover:text-emerald-500 transition-all">
+              <span className="px-2 md:px-4 lg:px-6 inline-block border-r-2 border-gray-300 dark:border-gray-600 text-base hover:text-emerald-500 transition-all">
                 Terms
               </span>
             </Link>
             <Link href="/legal">
-              <span className="text-base hover:text-emerald-500 transition-all">
+              <span className="px-2 md:px-4 lg:px-6 inline-block text-base hover:text-emerald-500 transition-all">
                 Legal
               </span>
             </Link>
+          </div>
+          <div className="flex justify-center items-center text-gray-500">
+            <span> Copyright &copy; 2024 Functionbasket.com</span>
           </div>
         </div>
       </footer>
