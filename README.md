@@ -17,7 +17,7 @@ A modern and visually appealing photo gallery application built using **Next.js*
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/photogallery.git
+   git clone https://github.com/blueorionn/photogallery.git
    cd photogallery
    ```
 
