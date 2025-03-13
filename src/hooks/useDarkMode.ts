@@ -4,8 +4,7 @@ export function useDarkMode() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const LOCAL_STORAGE_THEME_KEY = "theme";
 
-  // set theme handler
-  const setThemeFunc = (theme: "light" | "dark") => {
+  const setThemeHandler = (theme: "light" | "dark") => {
     setTheme(theme);
 
     if (typeof window !== undefined) {
@@ -13,39 +12,41 @@ export function useDarkMode() {
     }
   };
 
-  // set initial theme
   useEffect(() => {
+    /**
+     * set initial theme to localStorage theme variable
+     * if exsits else set it to user preferred theme.
+     */
     const setInitialTheme = () => {
-      if (
-        typeof window !== undefined &&
-        window.localStorage.getItem("theme") !== null
-      ) {
+      if (typeof window === undefined) {
+        setThemeHandler("light");
+      } else {
         const theme = window.localStorage.getItem("theme");
-        if (theme == "dark") {
-          setThemeFunc("dark");
-        } else if (theme == "light") {
-          setThemeFunc("light");
-        }
-      } else if (typeof window !== undefined) {
-        // preferred theme
-        const isDarkOs = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        if (isDarkOs) {
-          setThemeFunc("dark");
+
+        if (
+          typeof theme === "string" &&
+          (theme === "light" || theme === "dark")
+        ) {
+          setThemeHandler(theme);
+        } else {
+          // check if preferred theme is dark
+          const isDarkOs = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+
+          if (isDarkOs) setTheme("dark");
+          if (!isDarkOs) setTheme("light");
         }
       }
     };
+
     setInitialTheme();
   }, []);
 
   // toggle theme button
   const toggleTheme = () => {
-    if (theme === "dark") {
-      setThemeFunc("light");
-    } else if (theme == "light") {
-      setThemeFunc("dark");
-    }
+    if (theme === "dark") setThemeHandler("light");
+    if (theme === "light") setThemeHandler("dark");
   };
 
   return {

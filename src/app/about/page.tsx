@@ -32,7 +32,7 @@ export default function About() {
           </h1>
           <p className="mt-2 lg:mt-4 xl:mt-8">Welcome to our PhotoGallery!</p>
           <a
-            href=""
+            href="https://github.com/blueorionn/photogallery"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-2 xl:mt-4 text-blue-600 dark:text-blue-400"
