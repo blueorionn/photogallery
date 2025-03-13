@@ -1,6 +1,5 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
 import { useFormStatus } from "react-dom";
 
 export default function LoginPage({
@@ -11,10 +10,6 @@ export default function LoginPage({
   const searchParams = useSearchParams();
   const error = searchParams.get("error");
   const { pending } = useFormStatus();
-
-  useEffect(() => {
-    console.log(pending);
-  }, [pending]);
 
   return (
     <>
