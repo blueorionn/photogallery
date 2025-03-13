@@ -1,5 +1,7 @@
 "use client";
 import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { useFormStatus } from "react-dom";
 
 export default function LoginPage({
   login,
@@ -8,6 +10,11 @@ export default function LoginPage({
 }) {
   const searchParams = useSearchParams();
   const error = searchParams.get("error");
+  const { pending } = useFormStatus();
+
+  useEffect(() => {
+    console.log(pending);
+  }, [pending]);
 
   return (
     <>
@@ -61,6 +68,8 @@ export default function LoginPage({
                 <button
                   type="submit"
                   formAction={login}
+                  disabled={pending}
+                  style={{ opacity: `${pending ? "0.35" : "1"}` }}
                   className="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                   Sign in
