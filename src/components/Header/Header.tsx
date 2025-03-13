@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useContext } from "react";
-import { usePathname } from "next/navigation";
 import { ThemeContext } from "@/context/ThemeContext";
 import { Mochiy_Pop_P_One, Inter } from "next/font/google";
 import styles from "./styles.module.css";
@@ -20,19 +19,12 @@ const inter = Inter({ subsets: ["latin"], weight: "500" });
 export default function Header() {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const themeManager = useContext(ThemeContext);
-  const pathname = usePathname();
 
   const reflectSideBarToogle = (
     classnames: string[],
     fallbackclass: string[]
   ) => {
     return isSideBarOpen ? `${[...classnames]}` : `${[...fallbackclass]}`;
-  };
-  const isLinkActive = (
-    link: string,
-    classname = `${styles["_router-link-active"]}`
-  ) => {
-    return pathname === link ? classname : "";
   };
 
   return (
@@ -60,24 +52,6 @@ export default function Header() {
             className={`mt-2 lg:mt-0 ${inter.className} text-gray-700 dark:text-gray-300`}
           >
             <div className="hidden xl:flex items-center gap-4 xl:mt-2">
-              <Link href="/about" className={`${isLinkActive("/about")}`}>
-                <span className="text-base hover:text-emerald-500 transition-all">
-                  About
-                </span>
-              </Link>
-              <Link href="/terms" className={`${isLinkActive("/terms")}`}>
-                <span className="text-base hover:text-emerald-500 transition-all">
-                  Terms
-                </span>
-              </Link>
-              <Link href="/legal" className={`${isLinkActive("/legal")}`}>
-                <span className="text-base hover:text-emerald-500 transition-all">
-                  Legal
-                </span>
-              </Link>
-              <div className="h-6 w-0.5 border bg-gray-400 border-gray-400 dark:bg-gray-600 dark:border-gray-600">
-                <span className="sr-only">Divider</span>
-              </div>
               <button
                 type="button"
                 onClick={() => themeManager?.toggleTheme()}
@@ -176,36 +150,6 @@ export default function Header() {
           <div
             className={`flex flex-col justify-center mt-8 ${inter.className} text-gray-500 dark:text-gray-400`}
           >
-            <Link
-              href="/about"
-              className={`w-full py-4 border-b border-gray-300 dark:border-gray-700 ${isLinkActive(
-                "/about"
-              )}`}
-            >
-              <span className="text-base hover:text-emerald-500 transition-all">
-                About
-              </span>
-            </Link>
-            <Link
-              href="/terms"
-              className={`w-full py-4 border-b border-gray-300 dark:border-gray-700 ${isLinkActive(
-                "/terms"
-              )}`}
-            >
-              <span className="text-base hover:text-emerald-500 transition-all">
-                Terms
-              </span>
-            </Link>
-            <Link
-              href="/legal"
-              className={`w-full py-4 border-b border-gray-300 dark:border-gray-700 ${isLinkActive(
-                "/legal"
-              )}`}
-            >
-              <span className="text-base hover:text-emerald-500 transition-all">
-                Legal
-              </span>
-            </Link>
             <div className="w-ful my-4 p-4 rounded flex bg-gray-300 dark:bg-gray-800">
               <span className="flex-grow">Appearance</span>
               <button
