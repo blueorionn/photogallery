@@ -5,6 +5,19 @@ export async function fetchPhotos(min: number, max: number) {
   const { data, error } = await supabaseDbClient
     .from("photos")
     .select()
+    .is("tag", null)
+    .eq("delete", false)
+    .range(min, max);
+
+  return { data: data as Photo[] | null, error };
+}
+
+export async function fetchHiddenPhotos(min: number, max: number) {
+  const { data, error } = await supabaseDbClient
+    .from("photos")
+    .select()
+    .eq("tag", "hidden")
+    .eq("delete", false)
     .range(min, max);
 
   return { data: data as Photo[] | null, error };
