@@ -14,3 +14,15 @@ export function setLocalStorageFunc(key: string, value: string) {
   if (typeof window === undefined) return;
   localStorage.setItem(key, value);
 }
+
+// create photos page size
+export function createPhotosSize(page: number, pageSize = 24) {
+  return [(page - 1) * pageSize, page * pageSize];
+}
+
+// Distribute an array evenly.
+export function distributePhotosEvenly<T>(array: T[], chunks: number) {
+  return Array.from({ length: chunks }, (_, i) =>
+    array.filter((_, j) => j % chunks === i)
+  );
+}

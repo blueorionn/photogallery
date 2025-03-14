@@ -9,7 +9,7 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
-      movies: {
+      photos: {
         Row: {
           // the data expected from .select()
           id: number;
