@@ -44,9 +44,9 @@ export default function PhotoCard({ photo }: { photo: Photo }) {
           >
             <span className="sr-only">Toogle visiblity</span>
             {photoTag === "hidden" ? (
-              <Eye size={16} color="#d1d5db" />
-            ) : (
               <EyeOff size={16} color="#d1d5db" />
+            ) : (
+              <Eye size={16} color="#d1d5db" />
             )}
           </button>
           <span className="inline-block p-2.5 px-4 rounded text-gray-300 bg-gray-900">
