@@ -80,7 +80,7 @@ export default function Gallery({ photo }: { photo: Photo[] | null }) {
             })}
           </section>
         </section>
-        <div className="py-4 mt-64" ref={sentinelRef}>
+        <div className="py-4 mt-96" ref={sentinelRef}>
           <span className="sr-only">Observer</span>
         </div>
       </section>
