@@ -1,14 +1,6 @@
 # PhotoGallery Project
 
-A modern and visually appealing photo gallery application built using **Next.js** and powered by the **Pexels API** for fetching stunning images.
-
-## Features
-
-- Fetch and display high-quality images from the Pexels API.
-- Collections of albums.
-- Responsive design for seamless browsing on all devices.
-- Lazy loading for improved performance.
-- Infinite scroll to browse endless photos.
+My photo gallery project is built with Next.js and Supabase, offering a seamless way to browse and explore high-quality images. Supabase handles secure image storage and retrieval, while Next.js ensures a fast and smooth user experience with dynamic loading.
 
 ## Getting Started
 
@@ -29,7 +21,17 @@ A modern and visually appealing photo gallery application built using **Next.js*
    yarn install
    ```
 
-3. Start the development server:
+3. Required environment variables:
+
+   ```bash
+   export NEXT_PRIVATE_SUPABASE_URL='your-supabase-database-url'
+   export NEXT_PRIVATE_SUPABASE_ANON_KEY='your-supabase-anon-key'
+   export NEXT_PRIVATE_SUPABASE_SERVICE_ROLE='your-supabase-service-key'
+   export CLOUD_OBJECT_STORAGE_LOCATION='your-cloud-storage-url'
+   export PROJECT_URL='your-project-url'
+   ```
+
+4. Start the development server:
 
    ```bash
    npm run dev
