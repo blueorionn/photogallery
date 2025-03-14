@@ -39,3 +39,13 @@ export async function updatePhotoTag(tag: string, uuid: string) {
 
   return { data: data as Photo | null, error };
 }
+
+export async function deletePhoto(uuid: string) {
+  const { data, error } = await supabaseDbClient
+    .from("photos")
+    .update({ delete: true })
+    .eq("uuid", uuid)
+    .select();
+
+  return { data: data as Photo | null, error };
+}

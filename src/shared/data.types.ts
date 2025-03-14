@@ -5,4 +5,5 @@ export interface Photo {
   tag: string | null;
   height: number;
   width: number;
+  delete: boolean;
 }

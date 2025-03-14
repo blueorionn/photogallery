@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { fetchPhotoById, updatePhotoTag } from "@/lib/fetch";
+import { deletePhoto, fetchPhotoById, updatePhotoTag } from "@/lib/fetch";
 
 export async function GET(
   request: Request,
@@ -49,4 +49,22 @@ export async function POST(
   }
 
   return NextResponse.json({ message: "Photo updated" }, { status: 200 });
+}
+
+export async function DELETE(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const { id } = await params; // get id param
+  const { error } = await deletePhoto(id);
+
+  // if error occur
+  if (error) {
+    return NextResponse.json(
+      { message: "Internal server error" },
+      { status: 500 }
+    );
+  }
+
+  return NextResponse.json({ message: "Photo deleted" }, { status: 200 });
 }
