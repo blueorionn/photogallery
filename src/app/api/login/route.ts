@@ -40,7 +40,7 @@ export async function POST(req: Request) {
       'SELECT id FROM sessions WHERE id = $1 LIMIT 1',
       [sessionId]
     )
-    response.cookies.set('sessionId', session.rows[0].id, {
+    response.cookies.set('sessionid', session.rows[0].id, {
       httpOnly: true,
       secure: true,
       path: '/',
