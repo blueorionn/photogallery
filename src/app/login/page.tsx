@@ -3,6 +3,7 @@
 import type React from 'react'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Eye, EyeOff, Lock, Mail } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
@@ -17,12 +18,27 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
 export default function Page() {
-  const [showPassword, setShowPassword] = useState(false)
-  const [email, setEmail] = useState('')
+  const router = useRouter()
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
+  const [error, setError] = useState<string>('')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    const res = await fetch('/api/login', {
+      method: 'POST',
+      body: JSON.stringify({ username, password }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+
+    if (res.ok) {
+      router.push('/')
+    } else {
+      const { error } = await res.json()
+      setError(`${error}`)
+    }
   }
 
   return (
@@ -33,20 +49,23 @@ export default function Page() {
             <CardTitle className='text-center text-2xl font-bold'>
               Login
             </CardTitle>
+            <CardDescription className='text-center text-sm text-red-500'>
+              {error}
+            </CardDescription>
           </CardHeader>
           <form onSubmit={handleSubmit}>
             <CardContent className='space-y-4'>
               <div className='space-y-4'>
-                <Label htmlFor='email'>Email</Label>
+                <Label htmlFor='username'>Username</Label>
                 <div className='relative'>
                   <Mail className='text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2' />
                   <Input
-                    id='email'
-                    type='email'
-                    placeholder='name@example.com'
+                    id='username'
+                    type='text'
+                    placeholder='Username'
                     className='rounded-sm py-6 pl-10'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     required
                   />
                 </div>
