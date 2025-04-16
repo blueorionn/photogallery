@@ -49,7 +49,7 @@ export async function POST(req: Request) {
     })
 
     return response
-  } catch (err) {
+  } catch {
     return NextResponse.json({ error: 'Database error' }, { status: 500 })
   }
 }
