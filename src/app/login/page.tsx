@@ -108,7 +108,7 @@ export default function Page() {
                 type='submit'
                 className='w-full cursor-pointer rounded-sm py-6 font-semibold'
               >
-                Sign in
+                Login
               </Button>
             </CardFooter>
           </form>
