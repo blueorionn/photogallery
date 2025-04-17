@@ -1,6 +1,5 @@
 'use client'
 
-import path from 'path'
 import Image from 'next/image'
 import { useReadLocalStorage } from 'usehooks-ts'
 
@@ -18,12 +17,12 @@ export default function Photo({
   }
 }) {
   const resourceURL = useReadLocalStorage<string>('resource-url')
-  const photoURL = path.join(`${resourceURL}`, photo.photoname)
+  const photoURL = new URL(photo.photoname, `${resourceURL}`)
 
   return (
     <>
       <Image
-        src={photoURL}
+        src={photoURL.toString()}
         alt={photo.photoname}
         width={photo.width}
         height={photo.height}

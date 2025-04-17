@@ -3,8 +3,6 @@ import bcrypt from 'bcrypt'
 import { v4 as uuidv4 } from 'uuid'
 import { query } from '@/lib/db'
 
-export const runtime = 'edge'
-
 export async function POST(req: Request) {
   const { username, password } = await req.json()
 
