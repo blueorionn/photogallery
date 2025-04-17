@@ -32,7 +32,7 @@ export default function HomeWrapper() {
   return (
     <>
       <PhotoProvider>
-        <section className='mx-auto my-8 w-full max-w-7xl py-4'>
+        <section className='mx-auto my-8 w-full p-4 lg:p-8'>
           <ImageGallery />
         </section>
       </PhotoProvider>

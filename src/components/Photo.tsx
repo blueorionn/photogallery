@@ -27,7 +27,7 @@ export default function Photo({
         alt={photo.photoname}
         width={photo.width}
         height={photo.height}
-        className='aspect-auto h-full w-full overflow-hidden object-cover'
+        className='aspect-auto h-full w-full overflow-hidden rounded object-cover'
         quality={100}
       />
     </>
