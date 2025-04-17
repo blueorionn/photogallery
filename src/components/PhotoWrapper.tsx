@@ -5,7 +5,7 @@ import { PhotoProvider } from '@/provider/provider'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import ImageGallery from './ImageGallery'
 
-export default function HomeWrapper() {
+export default function PhotoWrapper({ endpoint }: { endpoint: string }) {
   const resourceURL = useReadLocalStorage<string>('resource-url')
   const urlRegex =
     /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/.*)?$/
@@ -33,7 +33,7 @@ export default function HomeWrapper() {
     <>
       <PhotoProvider>
         <section className='mx-auto my-8 w-full p-4 lg:p-8'>
-          <ImageGallery />
+          <ImageGallery endpoint={endpoint} />
         </section>
       </PhotoProvider>
     </>

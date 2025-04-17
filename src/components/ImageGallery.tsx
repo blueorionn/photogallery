@@ -10,7 +10,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import Photo from './Photo'
 
-export default function ImageGallery() {
+export default function ImageGallery({ endpoint }: { endpoint: string }) {
   const { width } = useWindowSize()
   const [columns, setColumns] = useState(1)
 
@@ -30,7 +30,7 @@ export default function ImageGallery() {
     // fetch photo function
     const fetchPhotos = async () => {
       try {
-        const res = await fetch(`/api/photos?page=${state.currentPage}`)
+        const res = await fetch(`${endpoint}?page=${state.currentPage}`)
 
         if (res.ok) {
           const data: {
@@ -55,7 +55,7 @@ export default function ImageGallery() {
     }
 
     fetchPhotos()
-  }, [state.currentPage, dispatch])
+  }, [state.currentPage, dispatch, endpoint])
 
   // Infinite scrolling
   const { isIntersecting, ref } = useIntersectionObserver({

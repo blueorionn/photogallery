@@ -35,7 +35,7 @@ export async function GET(request: Request) {
 
   // Query photos from database
   const photos = await query(
-    "SELECT * FROM photos WHERE delete = FALSE AND tag <> 'hidden' ORDER BY id LIMIT $1 OFFSET $2",
+    "SELECT * FROM photos WHERE delete = FALSE AND tag = 'hidden' ORDER BY id LIMIT $1 OFFSET $2",
     [`${pageSize}`, `${offset}`]
   )
 

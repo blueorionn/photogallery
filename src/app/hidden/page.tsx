@@ -21,7 +21,7 @@ export default async function Home() {
     <>
       <Header />
       <main className='h-[80vh] w-full overflow-x-hidden bg-gray-950'>
-        <PhotoWrapper endpoint='/api/photos' />
+        <PhotoWrapper endpoint='/api/photos/hidden' />
       </main>
     </>
   )
