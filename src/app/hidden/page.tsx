@@ -5,6 +5,8 @@ import { isSessionValid } from '@/auth/auth'
 import Header from '@/components/Header'
 import PhotoWrapper from '@/components/PhotoWrapper'
 
+export const runtime = 'edge'
+
 export default async function Home() {
   // Check if user is logged in
   const headerList = await headers()

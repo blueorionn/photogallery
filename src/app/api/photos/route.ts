@@ -4,6 +4,8 @@ import { parse } from 'cookie'
 import { query } from '@/lib/db'
 import { isSessionValid } from '@/auth/auth'
 
+export const runtime = 'edge'
+
 export async function GET(request: Request) {
   // Check if user is logged in
   const headerList = await headers()
