@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import { Space_Grotesk } from 'next/font/google'
+import Navbar from '@/components/Navbar'
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
 
 export default function Header() {
   return (
     <>
-      <header className='w-full bg-gray-950 p-8'>
+      <header className='flex w-full items-center justify-between bg-gray-950 p-8'>
         <div className='mx-auto flex max-w-7xl items-center justify-start gap-4'>
           <Image
             src={'/android-chrome-192x192.png'}
@@ -21,6 +22,7 @@ export default function Header() {
             Photogallery
           </h1>
         </div>
+        <Navbar />
       </header>
     </>
   )

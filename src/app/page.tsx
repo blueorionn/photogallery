@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 import { parse } from 'cookie'
 import { isSessionValid } from '@/auth/auth'
 import Header from '@/components/Header'
+import HomeWrapper from '@/components/HomeWrapper'
 
 export default async function Home() {
   // Check if user is logged in
@@ -19,7 +20,9 @@ export default async function Home() {
   return (
     <>
       <Header />
-      <main className='min-h-[100vh] w-full overflow-x-hidden bg-gray-950'></main>
+      <main className='h-[80vh] w-full overflow-x-hidden bg-gray-950'>
+        <HomeWrapper />
+      </main>
     </>
   )
 }
